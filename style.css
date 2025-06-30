@@ -54,3 +54,23 @@ body {
   font-size: 32px;
   z-index: 10;
 }
+
+.touch-button {
+  position: absolute;
+  bottom: 40%;
+  right: 10px;
+  padding: 14px 28px;
+  font-size: 18px;
+  background: #ff7b00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+@media (hover: hover) {
+  .touch-button {
+    display: none; /* Oculta en escritorio */
+  }
+}

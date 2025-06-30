@@ -89,6 +89,13 @@ window.addEventListener("mousedown", () => {
   }
 });
 
+document.getElementById("jumpBtn").addEventListener("touchstart", () => {
+  if (player.onGround) {
+    player.vy = JUMP_FORCE;
+    player.onGround = false;
+  }
+});
+
 // === Intro ===
 const introCanvas = document.getElementById("intro");
 const introCtx = introCanvas.getContext("2d");
@@ -116,6 +123,7 @@ document.getElementById("startButton").addEventListener("click", () => {
   document.getElementById("startScreen").style.display = "none";
   canvas.style.display = "block";
   document.getElementById("ui").style.display = "block";
+  document.getElementById("jumpBtn").style.display = "block";
   startGame();
 });
 
