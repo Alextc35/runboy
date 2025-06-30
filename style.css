@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #222;
+  color: white;
+  font-family: sans-serif;
+}
+
+#version {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  color: #aaa;
+}
+
+#game, #intro {
+  display: block;
+  background: black;
+  margin: 0 auto;
+  border: 2px solid #444;
+}
+
+#intro {
+  background-color: #ccc;
+  z-index: 10;
+}
+
+#game {
+  z-index: 1;
+}
+
+#startScreen {
+  position: relative;
+  text-align: center;
+}
+
+#startButton {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+
+#ui {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  z-index: 10;
+}
