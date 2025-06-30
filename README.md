@@ -1,4 +1,4 @@
-# [RunBoy]() 
+# [RunBoy](https://alextc35.github.io/runboy/) 
 
 ![version](https://img.shields.io/badge/version-0.1.0-blue.svg)
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
@@ -28,8 +28,8 @@
 ## 📦 Instalación local
 
 ```bash
-git clone https://github.com/alextc35/idle-runner.git
-cd idle-runner
+git clone https://github.com/alextc35/runboy.git
+cd runboy
 ```
 Luego abre index.html en tu navegador.
 
