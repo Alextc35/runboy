@@ -28,8 +28,8 @@
 ## 📦 Instalación local
 
 ```bash
-git clone https://github.com/alextc35/idle-runner.git
-cd idle-runner
+git clone https://github.com/alextc35/runboy.git
+cd runboy
 ```
 Luego abre index.html en tu navegador.
 
