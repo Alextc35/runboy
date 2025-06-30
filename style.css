@@ -71,6 +71,6 @@ body {
 
 @media (hover: hover) {
   .touch-button {
-    display: none; /* Oculta en escritorio */
+    display: none !important; /* Oculta en escritorio */
   }
 }
