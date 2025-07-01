@@ -59,11 +59,21 @@ function spawnItem() {
 }
 
 function checkCollision(a, b) {
+  const ax1 = a.x;
+  const ay1 = a.y - 32; // ajusta si dibujas el sprite más arriba
+  const ax2 = ax1 + a.width * SCALE;
+  const ay2 = ay1 + a.height * SCALE;
+
+  const bx1 = b.x;
+  const by1 = b.y;
+  const bx2 = bx1 + b.width;
+  const by2 = by1 + b.height;
+
   return (
-    a.x < b.x + b.width &&
-    a.x + a.width * SCALE > b.x &&
-    a.y < b.y + b.height &&
-    a.y + a.height * SCALE > b.y
+    ax1 < bx2 &&
+    ax2 > bx1 &&
+    ay1 < by2 &&
+    ay2 > by1
   );
 }
 
