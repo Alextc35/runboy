@@ -1,6 +1,6 @@
 # [RunBoy](https://alextc35.github.io/runboy/) 
 
-![version](https://img.shields.io/badge/version-0.1.1-blue.svg)
+![version](https://img.shields.io/badge/version-0.1.2-blue.svg)
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
 ![made-with](https://img.shields.io/badge/made%20with-JavaScript-yellow.svg)
 
