@@ -2,6 +2,7 @@ import { player, updatePlayerPhysics, drawPlayer, animatePlayer, jump } from './
 import { items, spawnItem, updateItems } from './items.js';
 import { updateBackground } from './background.js';
 import { enemies, spawnEnemy, updateEnemies } from './enemies.js';
+import { effects } from './effects.js';
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -11,6 +12,7 @@ let score = 0;
 let gameStarted = false;
 let itemSpawner = null;
 let enemieSpawner = null;
+
 
 const GRAVITY = 0.8;
 const JUMP_FORCE = -20;
@@ -50,6 +52,18 @@ function update() {
   updateEnemies(ctx, enemies, wormImg, player, SCALE, killSound, () => {
     score++;
     scoreEl.textContent = score;
+  });
+
+  effects.forEach((effect, i) => {
+    ctx.fillStyle = `rgba(200, 200, 200, ${1 - effect.frame / effect.duration})`;
+    ctx.beginPath();
+    ctx.arc(effect.x, effect.y, 20, 0, Math.PI * 2);
+    ctx.fill();
+
+    effect.frame++;
+    if (effect.frame >= effect.duration) {
+      effects.splice(i, 1); // Eliminar la explosión cuando termina
+    }
   });
 
   requestAnimationFrame(update);

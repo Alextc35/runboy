@@ -1,3 +1,5 @@
+import { spawnExplosion } from './effects.js';
+
 export const enemies = [];
 
 export function spawnEnemy(enemiesArray, canvas) {
@@ -33,6 +35,7 @@ export function updateEnemies(ctx, enemies, img, player, scale, coinSound, onKil
     if (hit) {
       coinSound.play();
       onKill();
+      spawnExplosion(enemy.x + enemy.width / 2, enemy.y);
       enemies.splice(i, 1);
     }
   });
