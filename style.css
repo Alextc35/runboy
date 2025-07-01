@@ -89,6 +89,12 @@ body {
   color: #ffd700;
 }
 
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
 #game {
   display: block;
   margin: 0 auto;

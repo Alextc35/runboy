@@ -53,14 +53,23 @@ startButton.addEventListener("click", () => {
   introMusic.pause();
   introMusic.currentTime = 0;
 
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("startScreen").style.display = "none";
-  document.getElementById("game").style.display = "block";
-  document.getElementById("ui").style.display = "block";
-  btnPlay.style.display = "none";
-  btnStop.style.display = "none";
+  const intro = document.getElementById("intro");
+  const startScreen = document.getElementById("startScreen");
 
-  startGame();
+  intro.classList.add("fade-out");
+  startScreen.classList.add("fade-out");
+
+  // Esperar la animación antes de ocultar y mostrar el juego
+  setTimeout(() => {
+    intro.style.display = "none";
+    startScreen.style.display = "none";
+    document.getElementById("game").style.display = "block";
+    document.getElementById("ui").style.display = "block";
+    btnPlay.style.display = "none";
+    btnStop.style.display = "none";
+
+    startGame();
+  }, 600);
 });
 
 // Al cargar la ventana, iniciar animación (pero no música)
