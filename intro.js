@@ -59,7 +59,6 @@ startButton.addEventListener("click", () => {
   intro.classList.add("fade-out");
   startScreen.classList.add("fade-out");
 
-  // Esperar la animación antes de ocultar y mostrar el juego
   setTimeout(() => {
     intro.style.display = "none";
     startScreen.style.display = "none";
@@ -69,7 +68,7 @@ startButton.addEventListener("click", () => {
     btnStop.style.display = "none";
 
     startGame();
-  }, 600);
+  }, 600); // Coincide con el CSS de fade-out
 });
 
 // Al cargar la ventana, iniciar animación (pero no música)
