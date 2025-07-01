@@ -4,6 +4,8 @@ const scoreEl = document.getElementById("score");
 
 let score = 0;
 let gameStarted = false;
+let gameLoopId = null;
+let itemSpawner = null;
 
 // === Assets ===
 const playerImg = new Image();
@@ -74,34 +76,21 @@ function jump() {
 }
 
 window.addEventListener("keydown", (e) => {
-  if (!gameStarted && (e.code === "Space" || e.code === "Enter")) {
-    startGame();
-  } else if (e.code === "Space" || e.code === "ArrowUp") {
+  if (gameStarted && (e.code === "Space" || e.code === "ArrowUp")) {
     jump();
   }
 });
 
 window.addEventListener("mousedown", () => {
-  if (!gameStarted) {
-    startGame();
-  } else {
-    jump();
-  }
-});
-
-document.getElementById("jumpBtn").addEventListener("touchstart", () => {
-  if (player.onGround) {
-    player.vy = JUMP_FORCE;
-    player.onGround = false;
-  }
+  jump();
 });
 
 function startGame() {
-  if (!gameStarted) {
+  if (gameStarted) return;
     gameStarted = true;
-    update();
-    setInterval(spawnItem, 1500);
-  }
+
+    gameLoopId = requestAnimationFrame(update);
+    itemSpawner = setInterval(spawnItem, 1500);
 }
 
 // === Fondo desplazable ===
@@ -109,6 +98,7 @@ let bgX = 0;
 
 // === Bucle principal ===
 function update() {
+  if (!gameStarted) return;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Fondo en movimiento

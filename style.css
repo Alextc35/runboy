@@ -6,14 +6,7 @@ body {
   font-family: sans-serif;
 }
 
-#version {
-  display: flex;
-  justify-content: center;
-  margin: 5px;
-  color: #aaa;
-}
-
-#game, #intro {
+#intro, #game {
   display: block;
   background: black;
   margin: 0 auto;
@@ -29,6 +22,20 @@ body {
   z-index: 1;
 }
 
+#musicBtnActive, #musicBtnStop {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px;
+  font-size: 16px;
+  background-color: #222;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
 #startScreen {
   position: relative;
   text-align: center;
@@ -38,13 +45,21 @@ body {
   position: absolute;
   top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 12px 24px;
-  font-size: 18px;
+  transform: translate(-50%, -800%);
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-decoration: underline;
   cursor: pointer;
   z-index: 20;
+  &:hover {
+    text-decoration: none;
+    color: #ffd700;
+  }
 }
-
 
 #ui {
   position: absolute;
@@ -55,22 +70,9 @@ body {
   z-index: 10;
 }
 
-.touch-button {
-  position: absolute;
-  bottom: 40%;
-  right: 10px;
-  padding: 14px 28px;
-  font-size: 18px;
-  background: #ff7b00;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-}
-
-@media (hover: hover) {
-  .touch-button {
-    display: none !important; /* Oculta en escritorio */
-  }
+#version {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  color: #aaa;
 }
