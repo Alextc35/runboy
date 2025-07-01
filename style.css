@@ -46,7 +46,7 @@ body {
 }
 
 /* === Subtítulo o mensaje === */
-#startScreen p {
+#startScreen p a {
   font-size: 1.2rem;
   color: #ccc;
   margin-bottom: 20px;
