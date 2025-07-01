@@ -4,7 +4,12 @@
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
 ![made-with](https://img.shields.io/badge/made%20with-JavaScript-yellow.svg)
 
-![Gameplay](assets/screenshot.png)
+<table>
+  <tr>
+    <td><img src="assets/screenshot2.png" width="400"/></td>
+    <td><img src="assets/screenshot.png" width="400"/></td>
+  </tr>
+</table>
 
 > Versión inicial de un mini juego estilo endless runner.
 
