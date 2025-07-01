@@ -6,20 +6,11 @@ body {
   font-family: sans-serif;
 }
 
-#intro, #game {
-  display: block;
-  background: black;
-  margin: 0 auto;
-  border: 2px solid #444;
-}
-
 #intro {
-  background-color: #ccc;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #ffd700;
   z-index: 10;
-}
-
-#game {
-  z-index: 1;
 }
 
 #musicBtnActive, #musicBtnStop {
@@ -59,6 +50,13 @@ body {
     text-decoration: none;
     color: #ffd700;
   }
+}
+
+#game {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #444;
+  z-index: 1;
 }
 
 #ui {
