@@ -24,11 +24,11 @@ coinSound.volume = 0.1;
 const FRAME_COUNT = 4;
 const FRAME_WIDTH = 64;
 const FRAME_HEIGHT = 64;
-const SCALE = 1.25;
+const SCALE = 1.5;
 
 // === Física ===
 const GRAVITY = 0.8;
-const JUMP_FORCE = -18;
+const JUMP_FORCE = -20;
 let groundY = 0;
 
 // === Jugador ===
@@ -52,8 +52,8 @@ function spawnItem() {
   items.push({
     x: canvas.width,
     y: canvas.height - 256,
-    width: 64,
-    height: 64,
+    width: 32,
+    height: 32,
     speed: 8,
   });
 }
@@ -122,7 +122,7 @@ function update() {
     playerImg,
     player.frame * FRAME_WIDTH, 0,
     FRAME_WIDTH, FRAME_HEIGHT,
-    player.x, player.y - 32,
+    player.x, player.y - 64,
     FRAME_WIDTH * SCALE, FRAME_HEIGHT * SCALE
   );
 
