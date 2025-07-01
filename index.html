@@ -7,24 +7,36 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- === INICIO === -->
-  <canvas id="intro" width="800" height="400"></canvas>
-  <!-- Botón para iniciar la música -->
-  <button type="button" id="musicBtnActive">🔊</button>
-  <button type="button" id="musicBtnStop" style="display: none;">🔈</button>
+  <!-- Pantalla de inicio -->
   <div id="startScreen">
-    <button type="button" id="startButton">¡Púlsame para empezar el juego!</button>
+    <h1><span class="run">v.</span><span class="boy">0.1.0</span></h1>
+    <p>creado por: @alextc35</p>
+
+    <!-- Botones música -->
+    <div>
+      <button id="musicBtnActive" type="button">🔊 Activar música</button>
+      <button id="musicBtnStop" type="button" style="display:none;">🔈 Silenciar</button>
+    </div>
+
+    <button id="startButton" type="button">Pulsa para empezar el juego</button>
   </div>
 
-  <!-- === JUEGO === -->
-  <canvas id="game" width="800" height="400" style="display: none;"></canvas>
+  <!-- Canvas de intro -->
+  <canvas id="intro" width="1024" height="200"></canvas>
+
+  <!-- Canvas del juego -->
+  <canvas id="game" width="1024" height="576" style="display: none;"></canvas>
+
+  <!-- Interfaz de usuario -->
   <div id="ui" style="display: none;">
-    <span>Monedas: <span id="score">0</span></span>
+    <span id="score">0</span>
   </div>
-  <script src="intro.js"></script>
-  <script src="game.js"></script>
 
-  <!-- === VERSION === -->
-  <small id="version">v. 0.1.0</small>
+  <!-- Info de versión -->
+  <div id="version">v0.1.0</div>
+
+  <!-- JS del juego -->
+  <script src="game.js"></script>
+  <script src="intro.js"></script>
 </body>
 </html>

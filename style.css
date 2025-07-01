@@ -1,64 +1,103 @@
+/* === Reset y base === */
 body {
   margin: 0;
   overflow: hidden;
   background: #222;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* === Canvas principal === */
 #intro {
-  display: block;
-  margin: 0 auto;
-  border: 2px solid #ffd700;
-  z-index: 10;
-}
-
-#musicBtnActive, #musicBtnStop {
   position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px;
-  font-size: 16px;
-  background-color: #222;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; /* por detrás */
+  background-color: #111;
 }
 
+/* === Pantalla de inicio === */
 #startScreen {
   position: relative;
-  text-align: center;
+  z-index: 2; /* por encima del canvas */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
+/* === Título RunBoy === */
+#startScreen h1 {
+  font-size: clamp(2rem, 5vw, 5rem);
+  margin-top: 300px;
+  margin-bottom: 20px;
+}
+
+.run {
+  color: #00d4ff;
+}
+
+.boy {
+  color: #ff5c5c;
+}
+
+/* === Subtítulo o mensaje === */
+#startScreen p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* === Botón de inicio === */
 #startButton {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -800%);
   background: none;
   border: none;
   padding: 0;
   font-size: 20px;
   font-weight: 600;
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
-  z-index: 20;
-  &:hover {
-    text-decoration: none;
-    color: #ffd700;
-  }
+  margin-top: 12px;
+  z-index: 21;
+  transition: all 0.2s ease;
+}
+
+#startButton:hover {
+  text-decoration: none;
+  color: #ffd700;
+}
+
+/* === Botones de música === */
+#musicBtnActive,
+#musicBtnStop {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 24px;
+  margin: 0 8px;
+  cursor: pointer;
+  z-index: 21;
+}
+
+#musicBtnActive:hover,
+#musicBtnStop:hover {
+  color: #ffd700;
 }
 
 #game {
   display: block;
   margin: 0 auto;
   border: 2px solid #444;
+  background: black;
   z-index: 1;
 }
 
+/* === UI de puntuación === */
 #ui {
   position: absolute;
   top: 16px;
@@ -66,11 +105,14 @@ body {
   transform: translateX(-50%);
   font-size: 32px;
   z-index: 10;
+  pointer-events: none;
 }
 
+/* === Número de versión === */
 #version {
   display: flex;
   justify-content: center;
   margin: 5px;
   color: #aaa;
+  font-size: 12px;
 }
